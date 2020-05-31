@@ -4,7 +4,7 @@ import sys
 import getopt
 
 args = sys.argv[1:]
-opts, args = getopt.getopt(args, 'r:g:b:')
+opts, args = getopt.getopt(args, 'r:g:b:p:o:')
 
 class value_rule(Enum):
     ZERO = 0
@@ -16,6 +16,7 @@ interval=5
 step=51
 images = []
 path = "./images/sample1.jpg"
+output = './output.gif'
 
 ruleR = value_rule.PLUS
 ruleG = value_rule.PLUS
@@ -49,6 +50,10 @@ for opt, arg in opts:
             ruleB = value_rule.MINUS
         else:
             raise ValueError("")
+    elif opt == "p":
+        path = arg
+    elif opt == "o":
+        output = arg
 
 print("# Parameters")
 print("interval : " + str(interval))
@@ -101,7 +106,7 @@ for i in range(0,step):
     images.append(im)
 
 # Save to gif
-images[0].save('./output_animation.gif',
+images[0].save(output,
         save_all=True, append_images=images[1:], optimize=False, duration=80, loop=0)
 
 print("# Program finished")
