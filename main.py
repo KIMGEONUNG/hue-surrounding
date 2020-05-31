@@ -4,7 +4,7 @@ import sys
 import getopt
 
 args = sys.argv[1:]
-opts, args = getopt.getopt(args, 'r:g:b:p:o:')
+opts, args = getopt.getopt(args, 'r:g:b:p:o:h')
 
 class value_rule(Enum):
     ZERO = 0
@@ -50,10 +50,17 @@ for opt, arg in opts:
             ruleB = value_rule.MINUS
         else:
             raise ValueError("")
-    elif opt == "p":
+    elif opt == "-p":
         path = arg
-    elif opt == "o":
+    elif opt == "-o":
         output = arg
+    elif opt == "-h":
+        print("-r : R of RGB value sign. 0 is no change, 1 is plus, 2 is minus. Default value is 1")
+        print("-g : G of RGB value sign. 0 is no change, 1 is plus, 2 is minus. Default value is 1")
+        print("-b : B of RGB value sign. 0 is no change, 1 is plus, 2 is minus. Default value is 1")
+        print("-p : Input image file path. Default path is \"%s\"" % path)
+        print("-o : output image file path. Default path is \"%s\"" % output)
+        sys.exit(1)
 
 print("# Parameters")
 print("interval : " + str(interval))
