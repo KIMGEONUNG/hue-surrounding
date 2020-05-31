@@ -1,10 +1,54 @@
 from PIL import Image
+from enum import Enum
+import sys
+import getopt
+
+args = sys.argv[1:]
+opts, args = getopt.getopt(args, 'r:g:b:')
+
+class value_rule(Enum):
+    ZERO = 0
+    PLUS = 1
+    MINUS = 2
 
 # Basic parameters
-interval=10
-step=50
+interval=5
+step=51
 images = []
-path = "./images/sample3.jpg"
+path = "./images/sample1.jpg"
+
+ruleR = value_rule.PLUS
+ruleG = value_rule.PLUS
+ruleB = value_rule.PLUS
+
+for opt, arg in opts:
+    if opt == "-r":
+        if arg == "0":
+            ruleR = value_rule.ZERO
+        elif arg == "1":
+            ruleR = value_rule.PLUS
+        elif arg == "2":
+            ruleR = value_rule.MINUS
+        else:
+            raise ValueError("")
+    elif opt == "-g":
+        if arg == "0":
+            ruleG = value_rule.ZERO
+        elif arg == "1":
+            ruleG = value_rule.PLUS
+        elif arg == "2":
+            ruleG = value_rule.MINUS
+        else:
+            raise ValueError("")
+    elif opt == "-b":
+        if arg == "0":
+            ruleB = value_rule.ZERO
+        elif arg == "1":
+            ruleB = value_rule.PLUS
+        elif arg == "2":
+            ruleB = value_rule.MINUS
+        else:
+            raise ValueError("")
 
 print("# Parameters")
 print("interval : " + str(interval))
@@ -22,10 +66,33 @@ print("height : " + str(height))
 
 # Create new image frame
 for i in range(0,step):
-    added = i * interval
+
+    val = i * interval
+    
+    if ruleR == value_rule.ZERO:
+        valR = 0 
+    elif ruleR == value_rule.PLUS:
+        valR = val 
+    elif ruleR == value_rule.MINUS:
+        valR = val * (-1) 
+
+    if ruleG == value_rule.ZERO:
+        valG = 0 
+    elif ruleG == value_rule.PLUS:
+        valG = val 
+    elif ruleG == value_rule.MINUS:
+        valG = val * (-1) 
+
+    if ruleB == value_rule.ZERO:
+        valB = 0 
+    elif ruleB == value_rule.PLUS:
+        valB = val 
+    elif ruleB == value_rule.MINUS:
+        valB = val * (-1) 
+
     new_data = []
     for d in data:
-        new_rgb = ((d[0] + added)%255, (d[1] + added)%255, (d[2] + added)%255)
+        new_rgb = ((d[0] + valR)%255, (d[1] + valG)%255, (d[2] + valB)%255)
         new_data.append(new_rgb)
 
     im = Image.new('RGB', (width, height))
