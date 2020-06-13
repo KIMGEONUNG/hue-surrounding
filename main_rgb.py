@@ -104,7 +104,7 @@ for i in range(0,step):
 
     new_data = []
     for d in data:
-        new_rgb = ((d[0] + valR)%255, (d[1] + valG)%255, (d[2] + valB)%255)
+        new_rgb = ((d[0] + valR + 255)%255, (d[1] + valG + 255)%255, (d[2] + valB + 255)%255)
         new_data.append(new_rgb)
 
     im = Image.new('RGB', (width, height))
