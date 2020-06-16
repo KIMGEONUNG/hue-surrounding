@@ -21,7 +21,7 @@
   ```Bash
   > python hue_surrounding.py -i ./sample_images/sample.png -o ./output.gif
   ```
-- **Check Option's Description**  
+- **Option Description**  
   ```Bash
   > python hue_surrounding.py -h
   -f : The number of frames 
