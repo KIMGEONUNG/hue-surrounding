@@ -5,33 +5,33 @@ import sys
 import getopt
 
 args = sys.argv[1:]
-opts, args = getopt.getopt(args, 's:p:o:h')
+opts, args = getopt.getopt(args, 'f:i:o:h')
 
 # Basic parameters
-# interval=0.02
-# step=50
 interval=0.05
-step=20
+frame=20
 images = []
-path = "./images/sample1.jpg"
+path = "./sample_images/sample.png"
 output = './output.gif'
 
 for opt, arg in opts:
-    if opt == "-p":
+    if opt == "-i":
         path = arg
     elif opt == "-s":
-        step = int(arg) 
-        interval = 1 / step
+        frame = int(arg) 
+        interval = 1 / frame 
     elif opt == "-o":
         output = arg
     elif opt == "-h":
-        print("-p : Input image file path. Default path is \"%s\"" % path)
+        print("-f : The number of frames ")
+        print("-i : Input image file path. Default path is \"%s\"" % path)
         print("-o : output image file path. Default path is \"%s\"" % output)
         sys.exit(1)
 
+print("### Program Started ###")
 print("# Parameters")
 print("interval : " + str(interval))
-print("step : " + str(step))
+print("frame : " + str(frame))
 print("image path : " + str(path))
 
 # Read original image file
@@ -44,7 +44,7 @@ print("width : " + str(width))
 print("height : " + str(height))
 
 # Create new image frame
-for i in range(0,step):
+for i in range(0,frame):
 
     val = i * interval
     
@@ -66,4 +66,4 @@ for i in range(0,step):
 images[0].save(output,
         save_all=True, append_images=images[1:], optimize=False, duration=80, loop=0)
 
-print("# Program finished")
+print("### Program Finished ###")
