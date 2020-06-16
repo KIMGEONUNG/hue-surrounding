@@ -5,15 +5,10 @@
 - This project is for generating hue variation gif image. To get a quick intuition, see the images below .The input image was generated from [Sound Visualization Library](https://github.com/MYEONGJOONIL/Sound_Visualization) created by [MYEONGJOONIL](https://github.com/MYEONGJOONIL)
 
 
-**[ Input Image ]**
-  
-<img src = "https://raw.githubusercontent.com/KIMGEONUNG/hue-surrounding/master/git_material/sample.png" width = "350">
 
-**[ Output gif ]**
-
-<img src = "https://raw.githubusercontent.com/KIMGEONUNG/hue-surrounding/master/git_material/result.gif" width = "350">
-
-
+| <img src = "https://raw.githubusercontent.com/KIMGEONUNG/hue-surrounding/master/git_material/sample.png" width = "350">  | <img src = "https://raw.githubusercontent.com/KIMGEONUNG/hue-surrounding/master/git_material/result.gif" width = "350"> |
+| :-------------: | :-------------: |
+| **Input Image** | **Output gif** |
 ## 2. Dependency
 - **Linux** : Ubuntu 18.04.4 LTS
 - **Python** : ver. 3.6.9
@@ -36,6 +31,6 @@
   
 
 ## 4. Version
-- current up-to-date version : v1.0.0
+- Current up-to-date version : v1.0.0
 
 
