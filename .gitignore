@@ -1,6 +1,3 @@
-examples
-examples/*
 output/*
-*.gif
-images/*
+/*.gif
 
