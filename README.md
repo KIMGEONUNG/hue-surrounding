@@ -5,26 +5,13 @@
 - This project is for generating hue variation gif image. To get a quick intuition, see the images below .The input image was generated from [Sound Visualization Library](https://github.com/MYEONGJOONIL/Sound_Visualization) created by [MYEONGJOONIL](https://github.com/MYEONGJOONIL)
 
 
-<div style=margin:15px;>
-<div style=display:inline-block;>
-<div style=text-align:center;>
+**[ Input Image ]**
+  
 <img src = "https://raw.githubusercontent.com/KIMGEONUNG/hue-surrounding/master/git_material/sample.png" width = "350">
 
-**[ Input Image ]**
-
-</div>
-
-
-</div>
-<div style=display:inline-block;>
-
-<div style=text-align:center;>
-<img src = "https://raw.githubusercontent.com/KIMGEONUNG/hue-surrounding/master/git_material/result.gif" width = "350">
-
 **[ Output gif ]**
-</div>
-</div>
-</div>
+
+<img src = "https://raw.githubusercontent.com/KIMGEONUNG/hue-surrounding/master/git_material/result.gif" width = "350">
 
 
 ## 2. Dependency
